@@ -7,7 +7,7 @@ This repo holds a data extraction protocol along with a cleaning script `LL_inde
 2) Select all  *Program Dimensions*  (Orgunit down to Scheduled Date). Under *Program Data Dimensions* select Type Data Element and select ALL data elements in the stage (this is a single event program).
 ![LL full DE](resources/LLfull1.png)
 
-3) From the Type Menu select Program Attribute, then choose the following Attributes:  _Consent to record data, Date of birth, Sex, Patient Status, Update patient status, Phone number, Supporter's Name, Relationship to Patient, Treated for hypertension in the past_ (phone numbers, dob, and supporters name will be removed later by script, see below)
+3) From the Type Menu select Program Attribute, then choose the following Attributes:  _Consent to record data, Consent to Send SMS Reminders, Date of birth or Age, Sex, Patient Status, Update patient status, Phone number, Supporter's Name, Relationship to Patient, Does patient have diabetes, History of stroke, History of heart attack, Treated for hypertension in the past_ (phone numbers, dob, and supporters name will be removed later by script, see below)
 
 ![TEIA](resources/LL_TEI.png)
 
@@ -26,7 +26,7 @@ until the next **&** and delete the highlight.
 
 9) Paste back into the Line List browser and download the dataset! The final step is to CLEAN and anonymize the data with the *LL_indexer.py* script.
 
-10) Add the downloaded file to the LL_indexer folder. Rename it input_file.csv 
+10) Add the downloaded file to the LL_indexer folder. Rename it `input_file.csv`
 11) Open the terminal within the folder and enter
 
 >  `python3 LL_indexer.py`
