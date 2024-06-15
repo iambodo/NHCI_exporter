@@ -17,7 +17,7 @@ def calculate_years_between(start_date, end_date):
         return 0
     start_date = pd.to_datetime(start_date)
     end_date = pd.to_datetime(end_date)
-    return (end_date - start_date) / pd.Timedelta(days=365.25)
+    return round((end_date - start_date) / pd.Timedelta(days=365.25))
 
 
 # Read the CSV file
@@ -32,7 +32,7 @@ df = clean_column_names(df)
 df['reg_ID'] = df['program_instance'].astype('category').cat.codes
 
 # Calculate age from DOB
-df['age_enrolled_by_dob'] = df.apply(lambda row: calculate_years_between(row['date_of_birth'], row['registration_date']), axis=1)
+df['age_enrolled_by_dob'] = df.apply(lambda row: calculate_years_between(row['date_of_birth_or_age'], row['registration_date']), axis=1)
 
 # Delete the TEI ID, Enrollment Id, Event ID, and DOB
 
