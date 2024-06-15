@@ -36,7 +36,7 @@ df['age_enrolled_by_dob'] = df.apply(lambda row: calculate_years_between(row['da
 
 # Delete the TEI ID, Enrollment Id, Event ID, and DOB
 
-df.drop(columns=['tracked_entity_instance', 'program_instance','event','date_of_birth'], axis=1, inplace=True)
+df.drop(columns=['tracked_entity_instance', 'program_instance','event','date_of_birth_or_age'], axis=1, inplace=True)
 
 #  add a one if contains a supporter . repeat for phone number
 
